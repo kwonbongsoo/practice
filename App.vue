@@ -24,13 +24,17 @@ export default {
       this.is_back = res;
     },
     backClick() {
+      this.$EventBus.$emit('back_click')
       this.is_back = false;
       this.title = "C H A T";
       this.$router.go(-1);
     },
     title_update(res) {
       this.title = res;
-    }
+    },
+    // list_no(res) {
+    //   this.$EventBus.$emit('list_no', res)
+    // }
   }
 }
 </script>
@@ -44,6 +48,9 @@ export default {
   height: 70px;
   text-align: center;
   position: relative;
+  top:0;
+  width: 100%;
+  z-index: 10;
 }
 .header>.back_btn {
   position:absolute;
@@ -60,8 +67,6 @@ export default {
 }
 body {
   margin: 0;
-  overflow: auto;
-width: 100%;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
