@@ -1,9 +1,10 @@
 <template>
   <div class="chat_list_container" :style="heightObj">
-    <div class="add_chat" @click="toastTest">
+    <div class="add_chat"  @click="toastTest">
     <span>+ New message</span>
   </div>
-  <div class="chat_list"  @click="chatList_click(obj.otherName), eventSend(obj.chat_list_no)" v-for="(obj,index) in chatList">
+  <!-- <div class="chat_list" @click="chatList_click(obj.otherName), eventSend(obj.chat_list_no)" v-for="(obj,index) in chatList"> -->
+    <div class="chat_list" @click="chatList_click(obj.otherName), eventSend(obj.chat_list_no)" v-for="obj in chatList">
     <div class="profile_div inline_block">
       <img :src="obj.profile_pic"/>
     </div>
@@ -19,7 +20,8 @@
       </div>
     </div>
   </div>
-  <div ref="toast" id="snackbar">{{toast_message}}</div>
+  <!-- <div ref="toast" id="snackbar">{{toast_message}}</div> -->
+  <div ref="toast" :class="{'show' : toast_bool}" id="snackbar">{{toast_message}}</div>
  </div>
 </template>
 
@@ -31,6 +33,7 @@ export default {
       heightObj: {},
       toast_el: '',
       toast_message: '아직 기능이 준비되지 않았어요',
+      toast_bool: false,
       chatList: [
           {
             otherName:"임블리",
@@ -112,8 +115,10 @@ export default {
       })
     },
     toastTest() {
-      this.toast_el.className = 'show'
-      setTimeout(()=> { this.toast_el.className = this.toast_el.className.replace("show", ""); }, 3000);
+      // this.toast_el.className = 'show'
+      // setTimeout(()=> { this.toast_el.className = this.toast_el.className.replace("show", ""); }, 3000);
+      this.toast_bool = true
+      setTimeout(()=> { this.toast_bool = false }, 3000);
     }
   },
 }
@@ -171,7 +176,7 @@ export default {
   overflow: hidden; 
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding-bottom: .6rem;
+  padding-bottom: .5rem;
 }
 .other_name>span {
   font-size: 1.1rem;

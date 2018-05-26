@@ -239,11 +239,12 @@ export default {
 }
 
 .chat_write_div {
+    box-sizing: border-box;
     padding: 0.9rem;
     text-align: center;
     background-color: white;
     border-top: solid 1px #e1e1eb;
-    
+    width: 100%;
 }
 .input_box {
     outline: none;
