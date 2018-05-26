@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <div ref="toast" id="snackbar">아직 기능이 준비되지 않았어요</div>
+  <div ref="toast" id="snackbar">{{toast_message}}</div>
  </div>
 </template>
 
@@ -30,6 +30,7 @@ export default {
     return {
       heightObj: {},
       toast_el: '',
+      toast_message: '아직 기능이 준비되지 않았어요',
       chatList: [
           {
             otherName:"임블리",
