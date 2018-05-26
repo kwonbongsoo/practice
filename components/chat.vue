@@ -255,6 +255,7 @@ export default {
 }
 .chat_input_box {
     width: 78%;
+    z-index: 10;
 }
 .gradeition {
     background: linear-gradient(to bottom, #72a6fe, #9183fe);
@@ -348,4 +349,5 @@ export default {
 .full-width {
     width: 100%;
 }
+
 </style>
