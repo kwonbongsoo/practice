@@ -31,7 +31,7 @@ export default {
   data () {
     return {
       heightObj: {},
-      toast_el: '',
+      // toast_el: '',
       toast_message: '아직 기능이 준비되지 않았어요',
       toast_bool: false,
       chatList: [
@@ -98,7 +98,6 @@ export default {
   mounted() {
     this.toast_el = this.$refs.toast
     this.$EventBus.$once('lastMsg_save', (last_msg)=> {
-      // console.log(last_msg)
     })
   },
   methods: {
@@ -109,7 +108,6 @@ export default {
       this.$router.push('/chat');
     },
     eventSend(list_no) {
-      // console.log(list_no)
       this.$nextTick(()=> {
         this.$EventBus.$emit('list_no', list_no);
       })

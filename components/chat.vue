@@ -174,7 +174,6 @@ export default {
             }
         }
         this.my_profile_pic = require('../assets/img/me.png')
-        // console.log(this.msgData)
     })
   },
   mounted() {
@@ -199,7 +198,7 @@ export default {
             else
                 now += ':'+date.getMinutes()
             
-            this.write_msg.time = now;
+            this.write_msg.time = now
             this.write_msg.msg = this.new_write_msg
             this.msgData.push(this.write_msg)
             this.last_msg = this.write_msg
@@ -218,9 +217,6 @@ export default {
             
             this.new_write_msg = ''
          }
-      },
-      move_scroll() {
-        //   console.log(this.$el)
       }
   }
 }
