@@ -25,6 +25,9 @@ export default {
     },
     backClick() {
       this.$EventBus.$emit('back_click')
+      // vue를 처음시작할 때 코드를 vuex가 있는 회사 코드로 시작해서 vuex없이 컴포넌트끼리 데이터 넘기는데 익숙하지 않았음.
+      // 레퍼런스랑 사용법 찾아보고 자식컴포넌트에서 부모컴포넌트로 넘길때 emit 을 사용했었고, 형제 컴포넌트일 때 데이터 넘기는 방법을 찾다가
+      // main.js에서 프로토 타입에 EventBus를 사용하는걸 보고 처리함 그래서 $emit 처리가 두가지로 나누어져 있음.
       this.is_back = false;
       this.title = "C H A T";
       this.$router.go(-1);
