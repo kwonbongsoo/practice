@@ -213,7 +213,7 @@ export default {
                 time:'',
             }
             this.$nextTick(()=> {
-                this.$refs.height.scrollTop = this.$el.querySelector('#scroll_event').scrollHeight
+                this.$refs.height.scrollTop = this.$refs.height.scrollHeight
             })
             
             this.new_write_msg = ''
