@@ -1,6 +1,6 @@
 <template>
 <div  class="chat_container" >
-    <div class="msg_box" id="scroll_event" :style="heightObj">
+    <div ref="height" class="msg_box" id="scroll_event" :style="heightObj">
         <div v-for="obj in msgData">
             <div v-if="obj.other" class="control_padding">
                 <div class="chat_box_other">
@@ -213,10 +213,8 @@ export default {
                 time:'',
             }
             this.$nextTick(()=> {
-                this.$el.querySelector('#scroll_event').scrollTop = this.$el.querySelector('#scroll_event').scrollHeight
+                this.$refs.height.scrollTop = this.$el.querySelector('#scroll_event').scrollHeight
             })
-            // console.log(this.$el.querySelector('#scroll_event').scrollTop)
-            // console.log(this.$el.querySelector('#scroll_event').scrollHeight)
             
             this.new_write_msg = ''
          }
@@ -253,6 +251,7 @@ export default {
     line-height: 30px;
     font-size: 1rem;
     color:black;
+    width: 100%;
 }
 .chat_input_box, .send_btn {
     display: inline-block;
